@@ -1,0 +1,128 @@
+Container styling for the projects layout
+.projects-layout {
+    padding: 2rem  1rem;
+    background-color: #000; /* Background color */
+    color: #fff; /* Text color */
+    width: 100%;
+    display: inline-block;
+}
+
+/* Styling for the vertical heading */
+.vertical-heading-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vertical-heading {
+    writing-mode: vertical-lr;
+    /* text-orientation: upright; */
+    transform: rotate(180deg);
+    font-size: 4.5rem;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 4px;
+}
+
+/* Project card styling */
+.project-cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    padding: 0 6px !important;
+    cursor: pointer;
+    border: 1px solid #232121;
+    height: 320px;
+    border-radius: 3px;
+}
+
+.project-card .image-place {
+    width: 100%;
+    margin-bottom: 1rem;
+    display: block;
+    height: 100%;
+}
+
+.project-card .text-place {
+    font-size: 0.875rem;
+}
+
+.project-card h6 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.project-card p {
+    margin-bottom: 0.5rem;
+}
+
+/* Alternate image and text positions on larger screens */
+@media (min-width: 768px) {
+    .project-card {
+        flex-direction: column;
+    }
+
+    .project-card:nth-child(even) {
+        /* flex-direction: column-reverse; */
+    }
+}
+
+
+
+.project-card {
+    position: relative;
+    overflow: hidden; /* Ensures content stays within the card */
+  }
+  
+  .card-container {
+    position: relative;
+  }
+  
+  .image-place {
+    position: relative;
+    width: 100%;
+  }
+  
+  .text-place {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background: rgba(0, 0, 0, 0.5); */
+    background: #000;
+    color: white;
+    padding: 20px;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out; /* Smooth fade-in effect */
+  }
+  
+  .project-card:hover .text-place {
+    opacity: 1; /* Show text-place on hover */
+  }
+  
+  .text-place h6 {
+    margin-top: 0;
+  }
+  
+  .text-place p {
+    margin-bottom: 10px;
+  }
+
+  /* workfolio */
+  h3.workfolio-heading {
+    font-size: 62px;
+    font-weight: bold;
+}
+.text-tyle {
+  background-color: #fff;
+  color: #000;
+  padding: 0 7px;
+  border-radius: 2px;
+}

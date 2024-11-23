@@ -1,0 +1,46 @@
+/* Original menu-bold style */
+.menu-bold {
+  font-size: 92px !important;
+  font-weight: 900 !important;
+  line-height: 70px !important;
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+  color: #c8c1c1 !important;
+}
+
+/* Hover effect for menu-bold */
+.menu-bold:hover {
+  /* text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3); */
+  color: #fff !important; /* Optional: change text color on hover */
+}
+
+/* For the custom alignment of the menu */
+.menu-custom {
+  text-align: right;
+  /* margin-top: 60px; */
+}
+
+/* Offcanvas styles */
+.offcanvas.offcanvas-end {
+  width: 100% !important;
+}
+
+/* Navbar toggler styles */
+@media (min-width: 768px) {
+  .navbar-expand-md .navbar-toggler {
+      display: block !important;
+      border: unset !important;
+      box-shadow: unset !important;
+  }
+}
+
+
+.header {
+    position: fixed !important;
+    top: 0;
+    padding: 10px 16px;
+    /* background: #000; */
+    width: 100%;
+    /* color: #f1f1f1; */
+    z-index: 999999;
+}
+

@@ -1,0 +1,101 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .menu-bold {
+        font-size: 30px !important;
+        font-weight: 900 !important;
+        line-height: 45px !important;
+        transition: all 0.5s ease; /* Smooth transition for all properties */
+        color: #c8c1c1 !important;
+    }
+    .heading-bold {
+        font-size: 38px;
+        line-height: unset;
+    }
+    .ks-heading-bold{
+        font-size: 35px !important;
+        line-height: unset !important;
+    }
+    .text-p-light {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .vertical-heading {
+        font-size: 36px;
+        font-weight: bold;
+        color: #fff;
+    }
+    h3.workfolio-heading {
+      font-size: 38px;
+    }
+    .icon-container {
+      position: absolute;
+      bottom: -40px;
+      left: 28%;
+   }
+  .heading-credo {
+    font-size: 38px;
+    line-height: unset;
+  }
+  .st-bx-1{
+    margin-top: 20px;
+  }
+  .st-bx-2{
+    margin-top: 50px;
+  }
+  .st-bx-3 {
+    margin-top: 50px;
+  }
+  .header {
+    background-color: #000;
+  }
+  .menu-custom {
+    margin-top: 100px;
+  }
+  section.sec-credo {
+    width: 100%;
+    display: inline-block;
+    margin-top: 140px;
+  }
+.image-container { 
+    height: 500px;
+ }
+ .team-image {
+    height: 500px;
+ }
+ h1.heading-bold.text-center.mb-4 {
+    text-align: left !important;
+ }
+ .vertical-img{
+    width: 100%;
+    height: 100vh;
+ }
+ .credo-desp {
+    font-size: 14px !important;
+    line-height: 18px;
+}
+.credo-title {
+    font-size: 18px !important;
+    margin-bottom: 10px !important;
+}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}

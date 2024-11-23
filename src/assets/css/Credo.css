@@ -1,0 +1,27 @@
+section.sec-credo {
+    width: 100%;
+    display: inline-block;
+    margin-top: 100px;
+}
+
+.heading-credo {
+    font-size: 4.5rem;
+    font-weight: 600;
+    line-height: 72px;
+    margin-bottom: 0px;
+}
+.st-bx-1{
+    margin-top: 200px;
+}
+.st-bx-2{
+    margin-top: 200px;
+}
+.st-bx-3{
+    margin-top: 200px;
+}
+.vertical-img{
+    width: 90%;
+}
+.credo-desp{
+    font-size: 20px;
+}
