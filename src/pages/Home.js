@@ -1,32 +1,66 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Container } from 'reactstrap';
 import "animate.css/animate.compat.css";
 import KickVideo from '../assets/images/common/KickHead.mp4';
-import AboutVedeo from '../assets/images/common/about-video.mp4';
 import HeaderHome from '../comonent/HeaderHome';
 import arrow from '../assets/images/common/arrow.png'
-import Footer from '../comonent/Footer';
+import { Link } from 'react-router-dom';
+import verticalvideo from "../assets/images/common/vertical-mobile.mp4"
+
+import { Helmet } from 'react-helmet';
+
 const Home = () => {
     // Scroll handler function to scroll to the "about-section"
-    const scrollToAboutSection = () => {
-        document.getElementById('about-section').scrollIntoView({ behavior: 'smooth' });
-    };
+    const videoRef = useRef(null);
+
+    useEffect(() => {
+        // Ensure video is played automatically after a refresh
+        if (videoRef.current) {
+            videoRef.current.play().catch((error) => {
+                console.error("Video autoplay failed:", error);
+            });
+        }
+    }, []);
 
     return (
         <>
+
+            <Helmet>
+                <title>Kickhead | Startup Growth Agency - From Ideas to Impact</title>
+                <meta
+                    name="description"
+                    content="Kickhead is a startup-inspired agency that blends creativity, innovation, and strategy to scale startups from X to 10X. Your journey to impactful growth starts here."
+                />
+                <meta
+                    name="keywords"
+                    content="startup agency, business growth, creative strategy, innovation, X to 10X, Kickhead."
+                />
+            </Helmet>
             <section>
                 <div className='bg-main' style={{ position: 'relative', overflow: 'hidden' }}>
                     {/* Background video */}
-                    <video loop autoPlay
-                        style={{
-                            width: '100%',
-                            height: '600px',
-                            objectFit: 'cover',
-                            zIndex: '-1'
-                        }}
+                    {/* <video loop autoPlay 
+                        className='home-viedo'
+                    >
+                        <source src={KickVideo} type="video/mp4" />
+                    </video>  */}
+
+                    <video
+                        ref={videoRef}
+                        loop
+                        autoPlay
+                        muted
+                        playsInline
+                        className='home-viedo'
                     >
                         <source src={KickVideo} type="video/mp4" />
                     </video>
+                    <video loop autoPlay
+                        className='mobile-viedo'
+                    >
+                        <source src={verticalvideo} type="video/mp4" />
+                    </video>
+
                     {/* Overlay div */}
                     <div style={{
                         position: 'absolute',
@@ -38,8 +72,7 @@ const Home = () => {
                         <HeaderHome />
                         <Container fluid>
                             <div className='pt-5 pb-5'>
-                                {/* Scroll down button */}
-                                <div onClick={scrollToAboutSection} style={{ position: 'absolute', bottom: '20px', width: '100%', textAlign: 'center', cursor: 'pointer', }}>
+                                <Link to="/about" style={{ position: 'absolute', bottom: '90px', width: '100%', textAlign: 'center', cursor: 'pointer', }}>
                                     <button
                                         style={{
                                             background: '#000',
@@ -48,7 +81,7 @@ const Home = () => {
                                             height: '70px',
                                             animation: 'bounce 2s infinite',
                                             borderRadius: '100px',
-                                            border: '5px solid#000',
+                                            border: '5px solid#fff',
                                             padding: '2px'
                                         }}
                                     >
@@ -56,39 +89,12 @@ const Home = () => {
                                             <img src={arrow} alt='' width='40px' />
                                         </span>
                                     </button>
-                                </div>
+                                </Link>
                             </div>
                         </Container>
                     </div>
                 </div>
             </section>
-
-            {/* Hidden "about section" */}
-            <section
-                style={{
-                    height: '100vh',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center'
-                }}
-                className="about-section text-center"
-                id="about-section"
-            >
-                <Container fluid>
-                    <video autoPlay loop muted
-                        style={{
-                            width: '100%',
-                            // height: '600px',
-                            objectFit: 'cover',
-                            zIndex: '-1'
-                        }}
-                    >
-                        <source src={AboutVedeo} type="video/mp4" />
-                    </video>
-                </Container>
-            </section>
-
-            <Footer/>
         </>
     );
 };

@@ -9,6 +9,11 @@ import WorkFolio from './pages/WorkFolio';
 import WorkFolioDetailOne from './pages/WorkFolioDetailOne';
 import Credo from './pages/Credo';
 import Freekick from './pages/FreeKick';
+import AboutUs from './pages/AboutUs';
+import OurCredo from './pages/OurCredo';
+import ThankyouTwo from './pages/ThankyouTeam';
+import ThankyouOne from './pages/ThankyouOne';
+import ThankyouTeam from './pages/ThankyouTeam';
 
 function App() {
   return (
@@ -25,11 +30,20 @@ function App() {
 
         <Route path="/our-credo" element={<Credo />} />
 
+        <Route path="/credo" element={<OurCredo />} />
+
+
         <Route path="/freekick" element={<Freekick />} />
 
 
 
         <Route path="/kick-start" element={<KickstartFlow />} />
+
+        <Route path="/about" element={<AboutUs />} />
+
+        <Route path="/thankyou" element={<ThankyouTeam />} />
+
+        <Route path="/thankyoutwo" element={<ThankyouOne />} />
 
       </Routes>
     </div>

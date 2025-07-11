@@ -1,0 +1,114 @@
+.fieldset-container {
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  /* padding: 10px; */
+}
+
+.fieldset-box {
+  position: relative;
+  border: 1px solid #cccccca6;
+  padding: 20px;
+  max-width: 100%; /* Allow flexibility for smaller screens */
+  background-color: #000; /* Use black as the background color */
+  color: #fff; /* Ensure text is visible on black background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.legend-container {
+  position: absolute;
+  top: -34px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  background-color: #000; /* Matches the background of the box */
+  padding: 0 30px;
+  font-size: 42px !important;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.legend-text {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.legend-text::before,
+.legend-text::after {
+  content: "";
+  height: 2px;
+  background: #000; /* Green for visual appeal */
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.legend-text::before {
+  right: 100%;
+  margin-right: 10px;
+  width: 50%; /* Adjust width for mobile responsiveness */
+}
+
+.legend-text::after {
+  left: 100%;
+  margin-left: 10px;
+  width: 50%; /* Adjust width for mobile responsiveness */
+}
+
+.legend-image {
+  /* height: 30px;
+  width: auto; */
+  height: 78px;
+  width: auto;
+  position: absolute;
+  bottom: -250px;
+  left: -22px;
+}
+
+.fieldset-content {
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .fieldset-box {
+    padding: 15px;
+    max-width: 100%; /* Take full width on smaller screens */
+  }
+
+  .legend-container {
+    font-size: 1rem; /* Reduce font size for smaller screens */
+    padding: 0 5px; /* Adjust padding */
+  }
+
+  .legend-text::before,
+  .legend-text::after {
+    width: 30%; /* Reduce the line width on smaller screens */
+  }
+
+  .fieldset-content {
+    font-size: 0.9rem; /* Slightly smaller text for readability */
+  }
+}
+
+@media (max-width: 480px) {
+  .legend-container {
+    font-size: 0.8rem; /* Further reduce the legend font size */
+  }
+
+  .legend-text::before,
+  .legend-text::after {
+    width: 20%; /* Shorter lines for very small screens */
+  }
+
+  .fieldset-content {
+    font-size: 0.85rem;
+  }
+}

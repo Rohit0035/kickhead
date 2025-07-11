@@ -80,7 +80,7 @@ const HeaderHome = (props) => {
                             </NavItem>
                             <NavItem>
                                 <NavLink className="menu-bold" href="/workfolio">
-                                    WORKFOLIO <span className="fs-5 fw-300 ms-5">02</span>
+                                    WORK <span className="fs-5 fw-300 ms-5">02</span>
                                 </NavLink>
                             </NavItem>
                             <NavItem>
@@ -89,13 +89,13 @@ const HeaderHome = (props) => {
                                 </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="menu-bold" href="/freekick">
-                                    FREEKICKS <span className="fs-5 fw-300 ms-5">04</span>
+                                <NavLink className="menu-bold" href="/team">
+                                    TEAM <span className="fs-5 fw-300 ms-5">04</span>
                                 </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="menu-bold" href="/team">
-                                    TEAM <span className="fs-5 fw-300 ms-5">05</span>
+                                <NavLink className="menu-bold" href="/freekick">
+                                    FREEKICKS <span className="fs-5 fw-300 ms-5">05</span>
                                 </NavLink>
                             </NavItem>
                         </Nav>

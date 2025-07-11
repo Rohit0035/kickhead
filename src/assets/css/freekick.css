@@ -4,3 +4,24 @@
 .st-mt-1 {
     margin-top: 50px;
 }
+.video-box {
+    border: 12px solid #fff; /* Light gray border */
+    border-radius: 15px; /* Rounded corners */
+    overflow: hidden; /* Ensure video doesn't exceed rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for aesthetic */
+    margin: 20px 0; /* Add some spacing */
+  }
+
+  .video-box iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+.frame-video{
+  width: 100%;
+  height: 350px !important;
+}
+
+.st-height-card{
+  /* height: 500px !important; */
+}

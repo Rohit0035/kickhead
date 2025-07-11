@@ -9,25 +9,51 @@ import { FaAngleDown } from "react-icons/fa6";
 import ScrollAnimation from 'react-animate-on-scroll';
 import Footer from '../comonent/Footer';
 import GetInTouch from '../comonent/GetInTouch';
+import FieldsetBox from '../comonent/FieldsetBox';
+import pdfkickservice from "../assets/pdf/kickhead@services.pdf"
+import pdfkickshrt from "../assets/pdf/KH@Shrt.pdf"
+import kickheadintro from "../assets/images/common/kickheadintro (1).jpg"
+import kickheadservice from "../assets/images/common/kickheadservice -1.jpg"
+import { Helmet } from 'react-helmet';
+
 
 const Freekick = () => {
 
-    const [openIndex, setOpenIndex] = useState(null);
+    // const [openIndex, setOpenIndex] = useState(null);
 
-    // Toggle the Collapse
-    const toggle = (index) => {
-        setOpenIndex(openIndex === index ? null : index);
-    };
+    // const toggle = (index) => {
+    //     setOpenIndex(openIndex === index ? null : index);
+    // };
 
-    const resources = [
-        { id: 1, name: "RESOURCE 1", link: "/resource1.pdf" },
-        { id: 2, name: "RESOURCE 2", link: "/resource2.pdf" },
-        { id: 3, name: "RESOURCE 3", link: "/resource3.pdf" },
-        { id: 4, name: "RESOURCE 4", link: "/resource4.pdf" },
-        { id: 5, name: "RESOURCE 5", link: "/resource5.pdf" },
-    ];
+    // const resources = [
+    //     {
+    //         id: 1,
+    //         name: "#1 Meet Kickhead: Your Startup Game-Changer.",
+    //         pdf: pdfkickservice,
+    //         desp: 'We craft brave, impactful solutions fueled by authentic imagination. From brand strategy to design and innovation, we’re here to help you scale from X to 10X.',
+    //         desp2: 'Download and elevate your brand with the challenger spirit!'
+    //     },
+    //     {
+    //         id: 2,
+    //         name: "#2 Meet Kickhead:  Startup-inspired agency",
+    //         pdf: pdfkickshrt,
+    //         desp: 'We understand the effort, the passion, and the desire to develop from X to 10X. Kickhead is where vision meets execution, and bold thinking produces thriving brands.',
+    //         desp2: 'Ready to kickstart? Let’s shake things up together.'
+    //     },
+    // ];
     return (
         <>
+            <Helmet>
+                <title>Freekicks | Fresh Ideas and Insights by Kickhead</title>
+                <meta
+                    name="description"
+                    content=" Explore Freekicks, our hub for fresh ideas, innovative insights, and creative solutions to inspire startups and innovators."
+                />
+                <meta
+                    name="keywords"
+                    content="creative insights, startup ideas, Freekicks by Kickhead, inspiration hub, innovation stories, startup trends."
+                />
+            </Helmet>
             <Header />
             <section className="sec-freekic">
                 <Container fluid>
@@ -35,65 +61,74 @@ const Freekick = () => {
                         <div>
                             <h2 className='heading-bold text-white mb-0'>FREEKICKS</h2>
                         </div>
+                    </ScrollAnimation>
+                    <ScrollAnimation animateIn='fadeIn'>
+                        <Row className='mt-5'>
+                            <Col xs="12" md="6" lg="6">
+                                <div className="project-card mb-3 st-height-card" style={{ height: 'auto' }}>
+                                    <h4 className='mt-2'><b>Kickhead Services deck</b></h4>
+                                    <div className="image-place" >
+                                        <img src={kickheadintro} alt='' width='100%' className='mt-1' />
+                                    </div>
+                                    <div className="text-place text-center">
+                                        <h4 className='fs-5'><b>Kickhead Services: Your Startup Game-Changer</b> </h4>
+                                        <hr></hr>
+                                        <p className='mt-5'>
+                                            We craft innovative solutions fueled by authentic
+                                            imagination to help you scale from X to 10X.
+                                        </p>
+                                        <p>Download and elevate your brand with the challenger spirit!</p>
+                                        <a href={pdfkickservice} download className="button-primary btn btn-secondary ms-2">
+                                            Download
+                                        </a>
+                                    </div>
+                                </div>
+                            </Col>
+                            {/* Card 1 */}
 
+                            {/* Card 2 */}
+                            <Col xs="12" md="6" lg="6">
+                                <div className="project-card mb-3 st-height-card" style={{ height: 'auto' }}>
+                                    <h4 className='mt-2'><b>Kickhead Short intro</b></h4>
+                                    <div className="image-place" >
+                                        <img src={kickheadservice} alt='' width='100%' className='mt-1' />
+                                    </div>
+                                    <div className="text-place text-center">
+                                        <h4 className='fs-5'><b>Kickhead Intro:  Startup-inspired agency</b>  </h4>
+                                        <hr></hr>
+                                        <p className='mt-5'>
+                                            It’s where vision meets execution, and bold
+                                            thinking produces thriving brands.
+                                        </p>
+                                        <p>
+                                            Ready to kickstart? Let’s shake things up together.
+                                        </p>
+                                        <a href={pdfkickshrt} download className="button-primary btn btn-secondary ms-2">
+                                            Download
+                                        </a>
+                                    </div>
+                                </div>
+                            </Col>
+                            {/* Card 3 */}
+                        </Row>
                     </ScrollAnimation>
 
-                    {/* <Row>
-                        <Col md="5">
-                            <Row>
-                                <Col md="6" className='p-2'>
-                                    <div className='image-place' style={{ height: '620px', width: '100%', backgroundColor: '#aaa' }}>
-                                    </div>
-                                </Col>
-                                <Col md="6" className='p-2'>
-                                    <div className='image-place mb-2' style={{ height: '200px', width: '100%', backgroundColor: '#aaa' }}>
-                                    </div>
-                                    <div className='image-place mb-2' style={{ height: '200px', width: '100%', backgroundColor: '#aaa' }}>
-                                    </div>
-                                    <div className='image-place' style={{ height: '200px', width: '100%', backgroundColor: '#aaa' }}>
-                                    </div>
-                                </Col>
-                            </Row>
-                        </Col>
-                        <Col md="7">
-                            <h3 className='fs-1 mb-0'><b>01</b></h3>
-                            <h3 className='fs-1 mb-0 mt-0'><b>WORK WITH US !</b></h3>
-                        </Col>
-                    </Row> */}
-
-                    <Row className='mt-5'>
+                    {/* <Row className='mt-5'>
                         <Col md="6">
                             <Row>
-                                <Col md="6" className='p-1'>
-                                    <div className='image-place' style={{ height: '620px', width: '100%', backgroundColor: '#aaa' }}>
+                                <Col lg={6} md={12} sm={12} xs={12} className='p-1'>
+                                    <div className='image-place mb-0'>
+                                        <img src={kickheadintro} alt='' width="100%" />
                                     </div>
                                 </Col>
-
-                                <Col md="6" className=''>
-                                    <Row>
-                                        <Col lg={12} md={6} sm={4} xs={4} className='p-1'>
-                                            <div className='image-place mb-0' style={{ height: '200px', width: '100%', backgroundColor: '#aaa' }}>
-                                            </div>
-                                        </Col>
-                                        <Col lg={12} md={6} sm={4} xs={4} className='p-1'>
-                                            <div className='image-place mb-0' style={{ height: '200px', width: '100%', backgroundColor: '#aaa' }}>
-                                            </div>
-                                        </Col>
-                                        <Col lg={12} md={6} sm={4} xs={4} className='p-1'>
-                                            <div className='image-place mb-0' style={{ height: '200px', width: '100%', backgroundColor: '#aaa' }}>
-                                            </div>
-                                        </Col>
-                                    </Row>
-
-                                    {/* <div className='image-place mb-2' style={{ height: '200px', width: '100%', backgroundColor: '#aaa' }}>
+                                <Col lg={6} md={12} sm={12} xs={12} className='p-1'>
+                                    <div className='image-place mb-3'>
+                                        <img src={kickheadservice} alt='' width="100%" />
                                     </div>
-                                    <div className='image-place' style={{ height: '200px', width: '100%', backgroundColor: '#aaa' }}>
-                                    </div> */}
                                 </Col>
                             </Row>
                         </Col>
                         <Col md="6" className='st-mt-1'>
-                            <h3 className='fs-1 mb-0'><b>02</b></h3>
                             <h3 className='fs-1 mb-5 mt-0'><b>RESOURCES !</b></h3>
                             <div className="">
                                 {resources.map((resource, index) => (
@@ -101,24 +136,27 @@ const Freekick = () => {
                                         <div className="d-flex justify-content-between align-items-center">
                                             <p
                                                 color="black"
-                                                className='text-white fs-4'
+                                                className='text-white fs-5'
                                                 onClick={() => toggle(index)}
                                                 style={{ textAlign: "left", borderBottom: '1px solid#fff', cursor: 'pointer', }}
                                             >
-                                                {resource.name}
+                                                <b>{resource.name}</b>
                                                 <FaAngleDown className='ms-5' />
                                             </p>
-                                            <a href={resource.link} download className="button-primary btn btn-secondary ms-2">
+                                            <a href={resource.pdf} download className="button-primary btn btn-secondary ms-2">
                                                 Download
                                             </a>
                                         </div>
                                         <Collapse isOpen={openIndex === index} >
                                             <Card style={{ border: 'none' }}>
                                                 <CardBody
-                                                    className="d-flex justify-content-between align-items-center"
+                                                    className="align-items-center"
                                                     style={{ backgroundColor: "black", color: "white" }}
                                                 >
-                                                    <span className='fs-5'>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad  dolor sit amet {resource.name}</span>
+                                                    <span className='fs-5'>
+                                                        {resource.desp}
+                                                    </span>
+                                                    <p className='mt-3'>{resource.desp2}</p>
                                                 </CardBody>
                                             </Card>
                                         </Collapse>
@@ -126,21 +164,67 @@ const Freekick = () => {
                                 ))}
                             </div>
                         </Col>
-                    </Row>
+                    </Row> */}
                 </Container>
 
 
             </section>
+
+            <section className='mb-70 mt-70'>
+                <Container fluid>
+                    <Row>
+                        <Col md="6">
+                            {/* YouTube Video Embed with Rounded Border */}
+                            <div className="video-box">
+                                <iframe
+                                    className='frame-video'
+                                    src="https://www.youtube.com/embed/kbsPaa3PwSc"
+                                    title="YouTube video player"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                ></iframe>
+                            </div>
+                        </Col>
+                        <Col md="6">
+                            {/* YouTube Video Embed with Rounded Border */}
+                            <div className="video-box">
+                                <iframe
+                                    className='frame-video'
+                                    src="https://www.youtube.com/embed/MluQtZlphXI"
+                                    title="YouTube video player"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                ></iframe>
+                            </div>
+                        </Col>
+                        <Col md="6">
+                            {/* YouTube Video Embed with Rounded Border */}
+                            <div className="video-box">
+                                <iframe
+                                    className='frame-video'
+                                    src="https://www.youtube.com/embed/oaTWZl-H1UU"
+                                    title="YouTube video player"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                ></iframe>
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
+            </section>
+
 
             <section className='mt-50 mb-5'>
                 <Container fluid>
                     <Row>
                         <Col md="12">
                             <ScrollAnimation animateIn='fadeInLeft'>
-                                <div className='grid-get-intouch'>
-                                    <h3 className='top-text-form'>GET IN TOUCH</h3>
-                                    <p className='text-center fs-5 '>
-                                        Let’s create awesomeness, share your vision
+                                <FieldsetBox legendText="Block Time">
+                                    <p className='text-center fs-5 text-white mt-2'>
+                                        with founder
                                     </p>
                                     <Row>
                                         <Col md='2'></Col>
@@ -149,7 +233,7 @@ const Freekick = () => {
                                         </Col>
                                         <Col md='2'></Col>
                                     </Row>
-                                </div>
+                                </FieldsetBox>
                             </ScrollAnimation>
                         </Col>
                     </Row>

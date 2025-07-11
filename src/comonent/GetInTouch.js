@@ -1,85 +1,80 @@
-import React from 'react';
-import { Form, FormGroup, Input, Label, Row, Col, Button } from 'reactstrap';
+import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+import emailjs from "@emailjs/browser";
 
 const GetInTouch = () => {
+  const form = useRef();
+  const navigate = useNavigate(); // Initialize useNavigate
 
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_u8yiqip", // Replace with your service ID
+        "template_v2yuh6a", // Replace with your template ID
+        form.current,
+        "g30qabygJR60hNpFg" // Replace with your public key
+      )
+      .then(
+        (result) => {
+          if (result.text === "OK") {
+            // alert("Message sent successfully!");
+            navigate("/thankyoutwo"); // Redirect to another page
+            form.current.reset(); // Resets the form
+          }
+        },
+        (error) => {
+          console.error("Error:", error.text);
+          alert("Failed to send the message. Please try again later.");
+        }
+      );
+  };
 
-    return (
-        <>
-            <Form>
-                <Row>
-                    <Col md="6">
-                        <FormGroup className='mt-3'>
-                            <Label for="">
-                                First name
-                            </Label>
-                            <Input
-                                id=""
-                                name=""
-                                placeholder=""
-                                type="text"
-                            />
-                        </FormGroup>
-                    </Col>
-                    <Col md="6">
-                        <FormGroup className='mt-3'>
-                            <Label for="">
-                                Last name
-                            </Label>
-                            <Input
-                                id=""
-                                name=""
-                                placeholder=""
-                                type="text"
-                            />
-                        </FormGroup>
-                    </Col>
-                    <Col md="6">
-                        <FormGroup className='mt-3'>
-                            <Label for="">
-                                Email address
-                            </Label>
-                            <Input
-                                id=""
-                                name=""
-                                placeholder=""
-                                type="email"
-                            />
-                        </FormGroup>
-                    </Col>
-                    <Col md="6">
-                        <FormGroup className='mt-3'>
-                            <Label for="">
-                                Phone Number
-                            </Label>
-                            <Input
-                                id=""
-                                name=""
-                                placeholder=""
-                                type="number"
-                            />
-                        </FormGroup>
-                    </Col>
-                    <Col md="12">
-                    <FormGroup className='mt-3'>
-                        <Label for="">Message</Label>
-                        <Input
-                            id="exampleText"
-                            name="text"
-                            type="textarea"
-                        />
-                        </FormGroup>
-                    </Col>
-                    <Col md="12" className='text-center mt-3'>
-
-                        <Button className='button-primary'>
-                            SEND MESSAGE
-                        </Button>
-                    </Col>
-                </Row>
-            </Form >
-        </>
-    );
+  return (
+    <form ref={form} onSubmit={sendEmail}>
+      <div className="row">
+        <div className="col-md-6 text-start mb-4">
+          <label>First Name</label>
+          <input type="text" name="user_first" className="form-control" />
+        </div>
+        <div className="col-md-6 text-start mb-4">
+          <label>Last Name</label>
+          <input type="text" name="user_last" className="form-control" />
+        </div>
+        <div className="col-md-6 text-start mb-4">
+          <label>Email</label>
+          <input type="email" name="user_email" className="form-control" />
+        </div>
+        <div className="col-md-6 text-start mb-4">
+          <label>Phone</label>
+          <input type="text" name="user_phone" className="form-control" />
+        </div>
+        <div className="col-md-12 text-start mb-4">
+          <label>Date</label>
+          <input
+            type="date"
+            name="user_date"
+            className="form-control custom-date-input"
+            style={{
+              color: "white", // For the text color
+              backgroundColor: "transparent", // For the input background
+              border: "1px solid white", // Optional: for visible border
+              padding: "5px",
+            }}
+          />
+        </div>
+        <div className="col-md-12 text-start mb-4">
+          <label>Message</label>
+          <textarea name="message" className="form-control" />
+        </div>
+        <div className="col-md-12">
+          <button type="submit" value="Send" className="button-primary btn btn-secondary">
+            Submit
+          </button>
+        </div>
+      </div>
+    </form>
+  );
 };
 
 export default GetInTouch;

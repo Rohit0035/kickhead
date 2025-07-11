@@ -1,4 +1,4 @@
-section.sec-credo {
+.sec-credo {
     width: 100%;
     display: inline-block;
     margin-top: 100px;
@@ -24,4 +24,28 @@ section.sec-credo {
 }
 .credo-desp{
     font-size: 20px;
+}
+
+.desktop-view-line{
+    display: block;
+}
+.mobile-view-line{
+    display: none;
+}
+
+.credo-title{
+    font-size: 22px;
+    font-weight: 700;
+}
+
+@media only screen and (max-width: 600px) {
+    span.legend-text {
+        font-size: 24px;
+    }
+    /* .desktop-view-line{
+        display: none;
+    }
+    .mobile-view-line{
+        display: block;
+    } */
 }

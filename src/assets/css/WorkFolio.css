@@ -1,4 +1,8 @@
-Container styling for the projects layout
+.sec-work {
+  padding-top: 120px !important;
+  margin-bottom: 30px !important;
+}
+
 .projects-layout {
     padding: 2rem  1rem;
     background-color: #000; /* Background color */
@@ -126,3 +130,11 @@ Container styling for the projects layout
   padding: 0 7px;
   border-radius: 2px;
 }
+
+/* css for detail page  */
+.sec-workfolio-detail{
+  width: 100%;
+  display: inline-block;
+  margin-top: 140px;
+}
+

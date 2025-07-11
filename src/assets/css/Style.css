@@ -157,3 +157,30 @@ textarea{
   opacity: 0;
   display: none;
 }
+
+/* home css */
+.home-viedo{
+  width: 100%;
+  height: 100vh;
+  object-fit: cover; 
+  z-index: -1;  
+  display: block;                
+}
+
+.mobile-viedo{
+  width: 100%;
+  height: 100vh;
+  object-fit: cover; 
+  z-index: -1; 
+  display: none;   
+}
+
+.custom-date-input::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* Inverts the icon color to white */
+}
+.custom-date-input {
+  color: white;
+  background-color: transparent;
+  border: 1px solid white; /* Optional: style the border */
+  padding: 5px;
+}
